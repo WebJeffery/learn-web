@@ -9,13 +9,14 @@ export default {
      * @param {通信数据} data 
      */
     dispatch (componentName, data) {
-      let parent = this.$parent || this.$root
-      let name = parent.$options.name
+      let parent = this.$parent
       // 深层遍历找到对应的父层组件
-      while(parent && name !== componentName) {
-        parent = parent.$parent
+      while(parent) {
         if (parent) {
-          name = parent.$options.name
+          parent.$emit(componentName, data)
+          parent = parent.$parent
+        } else {
+          break
         }
       }
       if (parent) {

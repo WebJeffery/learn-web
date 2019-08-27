@@ -1,6 +1,10 @@
 <template>
   <div id="app">
+    <h1>1、组件间通信</h1>
     <component-communicate></component-communicate>
+    <br />
+    <hr />
+    <h1>2、封装form组件最佳实践</h1>
   </div>
 </template>
 
