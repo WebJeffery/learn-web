@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input :type="type" :value="value" v-bind="$attrs" @input='outInput'>
+    <input :type="type" :value="value" v-bind="$attrs" @input='outInput' autocomplete="off">
   </div>
 </template>
 
@@ -28,6 +28,6 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

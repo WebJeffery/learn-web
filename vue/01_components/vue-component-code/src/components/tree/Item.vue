@@ -2,9 +2,9 @@
   <li>
     <div @click="toggle">
       {{model.title}}
-      <span v-if="isFolder">[{{showFolder ? '+' : '-'}}]</span>
+      <span v-if="isFolder">[{{showFolder ? '-' : '+'}}]</span>
     </div>
-    <ul>
+    <ul v-if="showFolder">
       <tree-item v-for="item in model.children" :model="item" :key="item.title"></tree-item>
     </ul>
   </li>
@@ -20,7 +20,7 @@
     },
     data() {
       return {
-        showFolder: false
+        showFolder: true
       }
     },
     computed: {

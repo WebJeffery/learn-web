@@ -1,8 +1,8 @@
 <template>
   <div class="grand-child2-app">
     <h1>GrandChild2</h1>
-    <grand-grand-child1></grand-grand-child1>
     <p>dispatchValue {{dispatchValue}}</p>
+    <grand-grand-child1></grand-grand-child1>
   </div>
 </template>
 

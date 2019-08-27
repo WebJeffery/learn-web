@@ -2,7 +2,7 @@
   <div>
     <label v-if="label">{{label}}</label>
     <slot></slot>
-    <p v-if="errorMsg">{{errorMsg}}</p>
+    <p v-if="errorMsg" style="color: red;">{{errorMsg}}</p>
   </div>
 </template>
 
@@ -52,6 +52,6 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

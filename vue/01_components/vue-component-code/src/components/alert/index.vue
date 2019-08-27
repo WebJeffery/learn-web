@@ -1,7 +1,7 @@
 <template>
-  <div v-if="isShow">
+  <div v-if="isShow" class="box">
     <h3>{{title}}</h3>
-    <p class="box-message">{{message}}</p>
+    <p class="box-content">{{message}}</p>
   </div>
 </template>
 
@@ -35,10 +35,29 @@
         this.isShow = false
         this.remove()
       }
-    },
+    }
   }
 </script>
 
-<style lang="scss" scoped>
-
+<style>
+.box {
+  position: fixed;
+  width: 100%;
+  top: 16px;
+  left: 0;
+  text-align: center;
+  pointer-events: none;
+  background-color: #fff;
+  border: blue 3px solid;
+  box-sizing: border-box;
+}
+.box-content {
+  width: 200px;
+  margin: 10px auto;
+  font-size: 14px;
+  padding: 8px 16px;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
 </style>

@@ -5,17 +5,26 @@
     <br />
     <hr />
     <h1>2、封装form组件最佳实践</h1>
+    <x-form></x-form>
+    <br />
+    <hr />
+    <h1>3、封装 Tree 组件最佳实践</h1>
+    <x-tree></x-tree>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import ComponentCommunicate from './components/communicate/index'
+import XForm from './components/form/index'
+import XTree from './components/tree/index'
 
 export default {
   name: 'app',
   components: {
-    ComponentCommunicate
+    ComponentCommunicate,
+    XForm,
+    XTree
   },
   provide () {
     return {

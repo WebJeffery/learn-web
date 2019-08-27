@@ -4,7 +4,6 @@ function create (componentName, props) {
   const vm = new Vue({
     render: h => h(componentName, {props})
   }).$mount()
-
   document.body.appendChild(vm.$el)
   // 1、拿到组件实例
   // 2、挂载其remove方法

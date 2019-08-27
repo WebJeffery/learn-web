@@ -1,11 +1,11 @@
 <template>
   <div class="grand-child1-app">
     <h1>GrandChild1</h1>
-    <grand-grand-child1></grand-grand-child1>
     <p>provide {{parentApp.title}}</p>
     <p>broadcast {{broadcast}}</p>
     <p>dispatchValue {{dispatchValue}}</p>
     <p>eventBus {{eventBus}}</p>
+    <grand-grand-child1></grand-grand-child1>
   </div>
 </template>
 
