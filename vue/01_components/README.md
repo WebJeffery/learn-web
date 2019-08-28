@@ -107,7 +107,28 @@
 - form 组件定义 model 和 校验规则
 - form-item 组件定义 label 和 prop
 
+**form组件：**
+- 定义 model 数据和 rules 校验规则
+- 定义全局校验方法
+- 使用 provide 向里嵌套组件通信
+
+**form-item组件：**
+- 定义 label 和 prop
+- prop 是用来校验的
+- 监听每项子组件的输入校验
+
+**x-input组件**
+- 实现一个双向数据绑定的组件
+- 使用 value 属性和 input 事件
+- 每次输入，向父组件派发校验输入
+
+
+
 #### 实现一个弹窗组件
+- 创建一个虚拟dom
+- 挂载在body上
+- 定义时间，删除挂载
 
 
 #### 实现一个tree组件
+- 使用递归组件
