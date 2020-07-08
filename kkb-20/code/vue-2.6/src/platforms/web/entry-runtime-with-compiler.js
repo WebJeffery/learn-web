@@ -14,6 +14,7 @@ const idToTemplate = cached(id => {
   return el && el.innerHTML
 })
 
+// 扩展 $mount 方法，将 template, el 编译为 render函数
 const mount = Vue.prototype.$mount
 Vue.prototype.$mount = function (
   el?: string | Element,
@@ -62,6 +63,7 @@ Vue.prototype.$mount = function (
         mark('compile')
       }
 
+      // 编辑得到 render 函数，静态 render 函数
       const { render, staticRenderFns } = compileToFunctions(template, {
         outputSourceRange: process.env.NODE_ENV !== 'production',
         shouldDecodeNewlines,
@@ -69,6 +71,7 @@ Vue.prototype.$mount = function (
         delimiters: options.delimiters,
         comments: options.comments
       }, this)
+      // render 赋值给options
       options.render = render
       options.staticRenderFns = staticRenderFns
 
@@ -79,6 +82,7 @@ Vue.prototype.$mount = function (
       }
     }
   }
+  // 挂载 $mount 挂载方法
   return mount.call(this, el, hydrating)
 }
 

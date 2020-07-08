@@ -24,6 +24,7 @@ const weexFactoryPlugin = {
   }
 }
 
+// 文件目录映射
 const aliases = require('./alias')
 const resolve = p => {
   const base = p.split('/')[0]

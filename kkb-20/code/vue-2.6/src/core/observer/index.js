@@ -36,7 +36,7 @@ export function toggleObserving (value: boolean) {
  */
 export class Observer {
   value: any;
-  dep: Dep;
+  dep: Dep; // 小管家，每个key对应一个dep
   vmCount: number; // number of vms that have this object as root $data
 
   constructor (value: any) {
@@ -159,9 +159,13 @@ export function defineReactive (
     configurable: true,
     get: function reactiveGetter () {
       const value = getter ? getter.call(obj) : val
+      // 依赖收集
       if (Dep.target) {
+        // dep : watcher -> n : n 关系，组件内部会有很多key, 所以一个 watcher 会有多个 dep
         dep.depend()
+        // 如果存在子ob：主要用于未来对象可能有属性增删，数组会有元素增删
         if (childOb) {
+          // 对象内部小管家要和当前 watcher 建立关系
           childOb.dep.depend()
           if (Array.isArray(value)) {
             dependArray(value)
