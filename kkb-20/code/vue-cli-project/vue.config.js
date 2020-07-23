@@ -13,5 +13,8 @@ module.exports = {
         components: path.join(__dirname, '/src/component')
       }
     }
+  },
+  chainWebpack(config) {
+    // console.log(config)
   }
 }
